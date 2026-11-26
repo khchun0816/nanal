@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>천사나날</title>
+<meta name="apple-mobile-web-app-title" content="천사나날">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#DCE3FF">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<script>
+/* 홈 화면 아이콘용 문 페이지.
+   주소 끝에 ?go=1 이 붙은 채로 새로 열리면(= 홈 화면 아이콘으로 열면) 곧바로 천사나날로 이동한다.
+   처음 브라우저로 열었을 때는 아래 안내를 보여 주고, '준비하기'를 누르면 주소만 ?go=1 로 바꾼다. */
+var APP = 'https://claude.ai/artifact/FwaaKAU7MG1oNtuAh6S1FJ';
+if (new URLSearchParams(location.search).get('go') === '1') location.replace(APP);
+</script>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F8F2F1;color:#2B2125;font:16px/1.6 system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;padding:24px max(20px,env(safe-area-inset-left)) 32px}
+main{width:100%;max-width:400px;text-align:center}
+img{width:120px;height:120px;border-radius:27px;display:block;margin:0 auto 14px}
+h1{font-size:30px;margin:0 0 4px;letter-spacing:-.02em}
+p{margin:0 0 18px;color:#7A6368}
+button,.open{display:block;width:100%;min-height:54px;border:0;border-radius:16px;font:inherit;font-size:17px;font-weight:700;cursor:pointer;text-decoration:none;line-height:54px}
+button{background:#BC6479;color:#fff}
+.open{background:#fff;color:#2B2125;margin-top:10px}
+ol{text-align:start;background:#fff;border-radius:18px;margin:0 0 14px;padding:16px 18px 16px 38px}
+li{margin-bottom:6px}li:last-child{margin:0}
+b{color:#BC6479}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+ <img src="icon-192.png" alt="">
+ <h1>천사나날</h1>
+ <div id="step1">
+  <p>홈 화면에 아이콘을 만드는 페이지예요.<br>아래 버튼을 먼저 눌러 주세요.</p>
+  <button type="button" id="ready">1. 아이콘 만들 준비하기</button>
+  <a class="open" href="https://claude.ai/artifact/FwaaKAU7MG1oNtuAh6S1FJ">그냥 천사나날 열기</a>
+ </div>
+ <div id="step2" hidden>
+  <p>준비됐어요. 이 화면에서 바로 추가해 주세요.</p>
+  <ol>
+   <li><b>아이폰(Safari)</b>: 아래 공유 버튼 → '홈 화면에 추가' → 추가</li>
+   <li><b>갤럭시(Chrome)</b>: 오른쪽 위 ⋮ → '홈 화면에 추가' → 추가</li>
+   <li>홈 화면에 생긴 <b>천사나날</b> 아이콘을 누르면 바로 열려요.</li>
+  </ol>
+  <a class="open" href="https://claude.ai/artifact/FwaaKAU7MG1oNtuAh6S1FJ">지금 천사나날 열기</a>
+ </div>
+</main>
+<script>
+document.getElementById('ready').addEventListener('click', function () {
+  history.replaceState(null, '', location.pathname + '?go=1');
+  document.getElementById('step1').hidden = true;
+  document.getElementById('step2').hidden = false;
+});
+</script>
+</body>
+</html>
